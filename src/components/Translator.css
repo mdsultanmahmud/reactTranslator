@@ -51,3 +51,11 @@ button{
     cursor: pointer;
     display: block;
 }
+
+.danger{
+    font-size: 15px;
+    font-weight: 600;
+    color: red;
+    margin: 0.5rem;
+    text-align: center;
+}
