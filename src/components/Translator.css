@@ -1,0 +1,52 @@
+.container{
+    min-height: 100vh;
+    min-width: 100vw;
+    display: grid;
+    place-items: center;
+    background-color: #8DB3F9
+}
+.content{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.option{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 1rem;
+    border: 1px solid #8DB3F9;
+    margin: 1rem auto;
+    width: 80%;
+
+}
+textarea{
+    padding: 1rem;
+    border: 1px solid #8DB3F9;
+    outline: none;
+    resize: none;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+select{
+    padding: .5rem;
+    outline: none;
+    border: 1px solid rgb(211, 207, 207);
+}
+
+button{
+    padding: 1rem;
+    text-transform: uppercase;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 80%;
+    margin: 1rem auto;
+    background-color: #8DB3F9;
+    cursor: pointer;
+    display: block;
+}
