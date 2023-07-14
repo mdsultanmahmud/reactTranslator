@@ -10,6 +10,7 @@ const Translator = () => {
     const [output, setOutput] = useState("")
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
+    const [isCopied, setIsCopied] = useState(false)
 
     // const [selectLng, setSelectLng] = useState('English')
     const [selectLngCode, setSelectLngCode] = useState('en-GB')
@@ -41,6 +42,25 @@ const Translator = () => {
         }
     }
 
+    const handleCopy = async(copy) =>{
+        if(copy == "from"){
+            try {
+                await navigator.clipboard.writeText(formText)
+                setIsCopied(true)
+            } catch (error) {
+                console.log(error);
+            }
+        }else{
+            try {
+                await navigator.clipboard.writeText(output)
+                setIsCopied(true)
+            } catch (error) {
+                console.log(error);
+
+            }
+        }
+    }
+
     return (
         <div className='container'>
             <div className="content">
@@ -59,7 +79,7 @@ const Translator = () => {
                                 <GiSpeaker size={22} style={{ cursor: 'pointer' }} />
                             </div>
                             <div>
-                                <AiOutlineCopy size={22} style={{ cursor: 'pointer' }} />
+                                <AiOutlineCopy onClick={() => handleCopy("from")} size={22} style={{ cursor: 'pointer' }} />
                             </div>
                             <div>
                                 <select onChange={(e) =>
@@ -85,7 +105,7 @@ const Translator = () => {
                                 <GiSpeaker size={22} style={{ cursor: 'pointer' }} />
                             </div>
                             <div>
-                                <AiOutlineCopy size={22} style={{ cursor: 'pointer' }} />
+                                <AiOutlineCopy onClick={() => handleCopy("to")} size={22} style={{ cursor: 'pointer' }} />
                             </div>
                         </div>
                     </div>
